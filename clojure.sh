@@ -6,6 +6,7 @@ alias butlast="head -n -1"
 alias apply="xargs $@"
 
 take () { cat - | head -n -$1; }
+drop () { cat - | tail -n +$(echo $1 + 1 | bc); }
 nth () { cat - | head -n $1 | tail -n 1; }
 filter () { cat - | xargs -L1 $SHELL -c "$@ && echo \$1" -- ; }
 remove () { cat - | xargs -L1 $SHELL -c "$@ || echo \$1" -- ; }
