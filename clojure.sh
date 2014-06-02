@@ -10,7 +10,6 @@ second () { to-cat "$2" | head -n 2 | tail -n 1; }
 rest () { to-cat "$2" | tail -n +1; }
 butlast () { to-cat "$2" | head -n -1; }
 
-# needs to be updated to take intervening args
 apply () {
   if [ ! -t 0 ]
   then
