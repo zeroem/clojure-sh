@@ -1,6 +1,6 @@
 # clojure.sh
 
-Adding some clojure-isms to your favorite shell. The idea isn't to give you Lisp in your shell but to give
+Add some Clojure-isms to your favorite shell. The idea isn't to give you Lisp in your shell but to give
 you the Lispy building blocks for operating on files and streams.
 
 ## Usage
@@ -8,12 +8,12 @@ you the Lispy building blocks for operating on files and streams.
 Just add this directory to your `PATH` and you're good to go!
 
 ```shell
-> ls | first
-# first-file
+# write the first line of the file to stdout
+> first file-path
 
+# drop the first line of ls and write the rest to stdout
 > ls | rest
-# all the other files
 
+# write only the executable files to stdout
 > ls | filter '[ -x $1 ]'
-# all the executable files
 ```
