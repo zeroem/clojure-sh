@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $(readlink -e $(cd $(dirname $0); pwd))/.clojure.sh
+. "$(cd $(dirname "$0") && pwd)/.clojure.sh"
 
 if [ ! -t 0 ]
 then

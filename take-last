@@ -1,5 +1,5 @@
 #!/bin/sh
 
-. $(readlink -e $(cd $(dirname $0); pwd))/.clojure.sh
+. "$(cd $(dirname "$0") && pwd)/.clojure.sh"
  
 to_cat "$2" | tail -n $1
