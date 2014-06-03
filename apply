@@ -1,0 +1,14 @@
+#!/bin/sh
+
+. $(readlink -e $(cd $(dirname $0); pwd))/.clojure.sh
+
+if [ ! -t 0 ]
+then
+  IN=-
+  A="$@"
+else
+  IN="${@: -1}"
+  A=$(but_last_arg "$@")
+fi
+
+cat $IN | xargs $A;
