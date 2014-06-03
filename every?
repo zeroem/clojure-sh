@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. $(readlink -e $(cd $(dirname $0); pwd))/.clojure.sh
+
+to_cat "$2" | xargs -L1 bash -c "$1" --
