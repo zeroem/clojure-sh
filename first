@@ -2,4 +2,4 @@
 
 . "$(cd $(dirname "$0") && pwd)/.clojure.sh"
 
-to_cat $2 | head -n 1
+to_cat $1 | head -n 1
