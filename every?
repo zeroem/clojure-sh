@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# Exits with 0 if and only if all lines exit 0 
+# otherwise exists non-zero
+#
+# Args:
+#  $1 test script
+#  $2 or - Input file or stream
 . "$(cd $(dirname "$0") && pwd)/.clojure.sh"
 
 to_cat "$2" | xargs -L1 bash -c "$1" --

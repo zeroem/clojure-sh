@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# Args:
+#  $1 some shell code
+#  $2...$N Arguments that will be prepended to the argument list
+#  $N+1 or - File or stream containing the arguments to pass to $1
+#
+# Example:
+#  pwd | apply ls
+
 . "$(cd $(dirname "$0") && pwd)/.clojure.sh"
 
 if [ ! -t 0 ]

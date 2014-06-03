@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# Write all but the last line of the input back to stdout
+#
+# Args:
+#  $1 or - File or stream to operate on
+#
+# NOTE: Will not work with POSIX implementations of `head` as it does
+# not support the `-n -1` construct
+
 . "$(cd $(dirname "$0") && pwd)/.clojure.sh"
 
 to_cat "$1" | head -n -1
