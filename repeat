@@ -1,0 +1,25 @@
+#!/bin/sh
+
+. "$(cd $(dirname "$0") && pwd)/.clojure.sh"
+
+n=-1
+
+case $# in
+  1)
+    v=$1
+    ;;
+  2)
+    n=$1
+    v=$2
+    ;;
+  *)
+    echo "HALP"
+    exit -1
+    ;;
+esac
+
+while [ 0 -ne $n ]
+do
+  echo $v
+  n=$[$n-1]
+done
