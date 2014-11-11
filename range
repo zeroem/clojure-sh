@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# args:
+# range: infinite range, start 0, step 1
+# range <end>, range from 0 to <end>(exclusive), step 1
+# range <start> <end>, range from <start>(inclusive) to <end>(exclusive) step 1
+# range <start> <end> <step>, range from <start>(inclusive) to <end>(exclusive) step <step>
+
+start=0
+step=1
+end=INF
+
+case $# in
+  0)
+    ;;
+  1)
+    end=$1
+    ;;
+  2)
+    start=$1
+    end=$2
+    ;;
+  3)
+    start=$1
+    end=$2
+    step=$3
+    ;;
+  *)
+    echo "HALP"
+    exit -1
+    ;;
+esac
+
+i=$start
+
+if [ $end = INF ]
+then
+  while [ 1 ]
+  do
+    echo $i
+    i=$[$i + $step]
+  done
+else
+  while [ $i -lt $end ]
+  do
+    echo $i
+    i=$[$i + $step]
+  done
+fi
+
