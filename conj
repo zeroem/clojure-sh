@@ -2,9 +2,18 @@
 
 . "$(cd $(dirname "$0") && pwd)/.clojure.sh"
 
-to_cat "$1"
+if [ ! -t 0 ]
+then
+  IN=-
+  A="$@"
+else
+  IN="$1"
+  A="${@:2}"
+fi
 
-for var in "${@:2}"
+to_cat $IN
+
+for var in $A
 do
   echo "$var"
 done
