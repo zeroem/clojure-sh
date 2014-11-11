@@ -1,0 +1,10 @@
+#!/bin/sh
+
+. "$(cd $(dirname "$0") && pwd)/.clojure.sh"
+
+to_cat "$1"
+
+for var in "${@:2}"
+do
+  echo "$var"
+done
