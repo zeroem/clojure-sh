@@ -2,6 +2,13 @@
 
 . "$(cd $(dirname "$0") && pwd)/.clojure.sh"
 
+
+# Arguments
+# repeat <v>: infinite stream of <v>
+# repeat <n> <v>: stream of <n> <v>s
+#
+# NOTE: conflicts with the shell builtin 'repeat'
+
 n=-1
 
 case $# in
