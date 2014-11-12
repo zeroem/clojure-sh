@@ -8,4 +8,4 @@
 #  $2 or - Input file or stream
 . "$(cd $(dirname "$0") && pwd)/.clojure.sh"
 
-to_cat "$2" | xargs -L1 bash -c "$1" --
+to_cat "$2" | xargs -L1 $SHELL -c "$1" --
