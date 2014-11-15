@@ -1,0 +1,18 @@
+#!/bin/sh
+
+. "$(cd $(dirname "$0") && pwd)/.clojure.sh"
+
+if [ $# -eq 0 ] && [ ! -t 0 ]
+then
+  values=$(cat -)
+else
+  values="$@"
+fi
+
+while true
+do
+  for v in $values
+  do
+    echo $v
+  done
+done
