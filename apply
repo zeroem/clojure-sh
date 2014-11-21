@@ -12,11 +12,11 @@
 
 if [ ! -t 0 ]
 then
-  IN=-
-  A="$@"
+  declare -r IN=-
+  declare -a A="$@"
 else
-  IN="${@: -1}"
-  A=$(but_last_arg "$@")
+  declare -r IN="${@: -1}"
+  declare -a A=$(but_last_arg "$@")
 fi
 
 cat $IN | xargs $A;

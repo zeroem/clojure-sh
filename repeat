@@ -9,15 +9,15 @@
 #
 # NOTE: conflicts with the shell builtin 'repeat'
 
-n=-1
+delcare -i n=-1
 
 case $# in
   1)
-    v=$1
+    declare -r v=$1
     ;;
   2)
     n=$1
-    v=$2
+    declare -r v=$2
     ;;
   *)
     echo "HALP"

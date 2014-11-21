@@ -4,9 +4,9 @@
 
 if [ $# -eq 0 ] && [ ! -t 0 ]
 then
-  values=$(cat -)
+  declare -a values=$(cat -)
 else
-  values="$@"
+  declare -a values="$@"
 fi
 
 while true

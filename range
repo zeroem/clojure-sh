@@ -6,9 +6,9 @@
 # range <start> <end>, range from <start>(inclusive) to <end>(exclusive) step 1
 # range <start> <end> <step>, range from <start>(inclusive) to <end>(exclusive) step <step>
 
-start=0
-step=1
-end=INF
+declare -i start=0
+declare -i step=1
+declare end=INF
 
 case $# in
   0)
@@ -31,7 +31,7 @@ case $# in
     ;;
 esac
 
-i=$start
+declare -i i=$start
 
 if [ $end = INF ]
 then

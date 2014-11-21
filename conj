@@ -4,11 +4,11 @@
 
 if [ ! -t 0 ]
 then
-  IN=-
-  A="$@"
+  declare -r IN=-
+  declare -a A="$@"
 else
-  IN="$1"
-  A="${@:2}"
+  declare -r IN="$1"
+  declare -a A="${@:2}"
 fi
 
 to_cat $IN

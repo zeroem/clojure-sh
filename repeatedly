@@ -6,11 +6,11 @@ declare -i n=-1
 
 case $# in
   1)
-    f=$1
+    declare -r f=$1
     ;;
   2)
     n=$1
-    f=$2
+    declare -r f=$2
     ;;
   *)
     echo "HALP"
