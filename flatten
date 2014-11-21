@@ -1,5 +1,0 @@
-#!/bin/sh
-
-. "$(cd $(dirname "$0") && pwd)/.clojure.sh"
-
-to_cat "$1" | xargs echo
