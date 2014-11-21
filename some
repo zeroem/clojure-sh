@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# echos the first line that matches the predicate and exists 0
+# otherwise exits with 1
+#
+# Args:
+#  $1 test script
+#  $2 or - Input file or stream
+. "$(cd $(dirname "$0") && pwd)/.clojure.sh"
+
+to_cat "$2" | while read l; do
+  $SHELL -c "$1" $l $l
+  if [ $? -eq 0 ]
+  then
+    echo $l
+    exit 0;
+  fi
+done
+
+exit 1
