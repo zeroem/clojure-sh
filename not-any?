@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Exits with 1 if any line matches the predicate
+
+# Args:
+#  $1 test script
+#  $2 or - Input file or stream
+. "$(cd $(dirname "$0") && pwd)/.clojure.sh"
+
+to_cat "$2" | while read l; do
+  $SHELL -c "$1" $l $l
+  if [ $? -eq 0 ]
+  then
+    exit 1;
+  fi
+done
+
+exit 0
