@@ -6,7 +6,7 @@ to_cat "$2" | while read l; do
   if [ ! -z "$FOUND" ]
   then
     echo $l
-  elif ! $SHELL -c "$1" -- $l
+  elif ! $SHELL -c "$1" -- "$l"
   then
     FOUND=1
     echo $l

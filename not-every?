@@ -8,7 +8,7 @@
 . "$(cd $(dirname "$0") && pwd)/.clojure.sh"
 
 to_cat "$2" | while read l; do
-  $SHELL -c "$1" $l $l
+  $SHELL -c "$1" -- $l
   if [ ! $? -eq 0 ]
   then
     exit 0;
