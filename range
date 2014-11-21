@@ -38,13 +38,13 @@ then
   while [ 1 ]
   do
     echo $i
-    i=$[$i + $step]
+    i=$(( i += step ))
   done
 else
   while [ $i -lt $end ]
   do
     echo $i
-    i=$[$i + $step]
+    i=$(( i += step ))
   done
 fi
 
